@@ -44,12 +44,12 @@ const router = createRouter({
   ],
 });
 router.beforeEach((to, _, next) => {
-  // if (to.meta.requiresAuth) {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   if (!user) {
-  //     next({ path: "/signin" });
-  //   }
-  // }
+  if (to.meta.requiresAuth) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      next({ path: "/signin" });
+    }
+  }
   next();
 });
 app.use(router);
