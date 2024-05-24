@@ -22,13 +22,13 @@
               >
               <a
                v-if="user"
-                href="/create-news"
+                @click="nextPage('/create-news')"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >Tạo bài viết</a
               >
               <a
+               @click="nextPage('/news-my-acount')"
                 v-if="user"
-                href="/news-my-acount"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                 >Bài viết của tôi</a
               >
@@ -90,13 +90,13 @@
         >
         <a
           v-if="user"
-          href="/create-news"
+         @click="nextPage('/create-news')"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
           >Tạo bài viết</a
         >
         <a
+         @click="nextPage('/news-my-acount')"
           v-if="user"
-          href="/news-my-acount"
           class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
           >Bài viết của tôi</a
         >
