@@ -60,7 +60,7 @@
           >
             Đăng xuất
           </button>
-          <a href="/signin" v-if="!user"
+          <a @click="nextPage('/signin')" v-if="!user"
             ><button
               type="button"
               class="py-2 mx-2 px-4 me-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -68,7 +68,7 @@
               Đăng nhập
             </button></a
           >
-          <a href="/signup" v-if="!user"
+          <a @click="nextPage('/signup')" v-if="!user"
             ><button
               type="button"
               class="py-2 mx-2 px-4 me-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
@@ -117,7 +117,11 @@ export default {
       user.value=null
       router.replace('/')
     }
+    function nextPage(url) {
+      router.replace(url)
+    }
     return {
+      nextPage,
       user,
       logout
     };
